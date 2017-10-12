@@ -1,18 +1,19 @@
 class Project
-	attr_accessor :name, :desc
+  attr_accessor :name, :description, :owner, :tasks
+  def initialize name, description, owner
+    @name = name
+    @description = description
+    @owner = owner
+    @tasks = []
+  end
+  def elevator_pitch
+    "#{@name}, #{@description}"
+  end
 
-	def initialize(name, desc)
-		@name = name
-		@desc = desc
-	end
-
-	def elevator_pitch
-		puts "#{@name}"
-		puts "#{@desc}"
-	end
-
+  def add_tasks(task)
+  	@tasks.push(task)
+  end
 end
-
-project1 = Project.new("HearthProject", "Guide for playing like a pro!")
-puts project1.name
-project1.elevator_pitch
+# project1 = Project.new("HearthProject", "Guide for playing like a pro!")
+# puts project1.name
+# project1.elevator_pitch
